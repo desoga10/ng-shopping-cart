@@ -1,89 +1,36 @@
-.cart-item {
-position: relative;
-margin-bottom: 30px;
-padding: 0 50px 0 10px;
-background-color: #fff;
-box-shadow: 0 12px 20px 1px rgba(64, 64, 64, .09);
+/* Main Body */
+.cart-item-thumb {
+    display: block;
+    width: 10rem
 }
-.cart-item .cart-item-label {
-display: block;
-margin-bottom: 15px;
-color: #8c8c8c;
-font-size: 13px;
-font-weight: 600;
-text-transform: uppercase;
+
+.cart-item-thumb>img {
+    display: block;
+    width: 100%
 }
-.cart-item .cart-item-product {
-display: table;
-width: 420px;
-text-decoration: none;
+.font-weight-semibold {
+    font-weight: 600 !important;
 }
-.cart-item .cart-item-product-thumb, .cart-item .cart-item-product-info {
-display: table-cell;
-vertical-align: top;
+
+.product-card-title {
+    display: block;
+    margin-bottom: .75rem;
+    padding-bottom: .875rem;
+    border-bottom: 1px dashed #e2e2e2;
+    font-size: 1rem;
+    font-weight: normal;
 }
-.cart-item .cart-item-product-thumb {
-width: 110px;
+
+/* Side Bar */
+
+img {
+  max-width: 100%;
 }
-.cart-item .cart-item-product-thumb > img {
-display: block;
-width: 100%;
+
+.product-info .connect {
+  margin: 15px 0 5px 0;
 }
-.cart-item .cart-item-product-info {
-padding-top: 5px;
-padding-left: 15px;
-}
-.cart-item .cart-item-product-info > span {
-display: block;
-margin-bottom: 2px;
-color: #404040;
-font-size: 12px;
-}
-.cart-item .cart-item-product-title {
-margin-bottom: 8px;
-transition: color, 0.3s;
-color: #343b43;
-font-size: 16px;
-font-weight: bold;
-}
-.cart-item .cart-item-product:hover .cart-item-product-title {
-color: #ac32e4;
-}
-.cart-item .count-input {
-display: inline-block;
-width: 85px;
-}
-.cart-item .remove-item {
-right: -10px !important;
-}
-@media (max-width: 991px) {
-.cart-item {
-  padding-right: 30px;
-}
-.cart-item .cart-item-product {
-  width: auto;
-}
-}
-@media (max-width: 768px) {
-.cart-item {
-  padding-right: 10px;
-  padding-bottom: 15px;
-}
-.cart-item .cart-item-product {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-.cart-item .cart-item-product-thumb, .cart-item .cart-item-product-info {
-  display: block;
-}
-.cart-item .cart-item-product-thumb {
-  margin: 0 auto 10px;
-}
-.cart-item .cart-item-product-info {
-  padding-left: 0;
-}
-.cart-item .cart-item-label {
-  margin-bottom: 8px;
-}
+
+.product-info .connect button {
+  margin-right: 15px;
 }
