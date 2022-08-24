@@ -1,1 +1,50 @@
+<!-- <div class="container pb-5 mb-2 mt-5">
+  <div class="row">
+
+    <div class="col-8 cart-item d-md-flex justify-content-between" *ngFor="let product of productList">
+      <div class="px-3 my-3">
+
+        <div class="cart-item-product-thumb">
+          <img [src]="product.image" alt="Product" class="zoom" style="object-fit: cover">
+        </div>
+        <div class="cart-item-product-info">
+          <h4 class="cart-item-product-title">{{product.name}}</h4><span><strong>Type:</strong>
+            {{product.type}}</span><span><strong>Color:</strong> {{product.color}}</span>
+        </div>
+
+      </div>
+      <div class="px-3 my-3 text-center">
+      <div class="cart-item-label">Quantity</div>
+      <div class="count-input">
+        <select class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+        </select>
+      </div>
+    </div>
+      <div class="px-3 my-3 text-center">
+        <div class="cart-item-label">Price</div><span class="text-xl font-weight-medium">${{product.price}}</span>
+      </div>
+      <div class="px-3 my-3 text-center">
+        <div class="cart-item-label">Discount</div><span
+          class="text-xl font-weight-medium">-{{product.discount}}%</span>
+      </div>
+      <div class="px-3 my-3 text-center">
+        <button (click)="addToCart(product)" type="button" class="btn btn-info mt-3">Add Cart</button>
+        <h6 *ngIf="product.id === selectedProduct">selected</h6>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <h6>Preview Page </h6>
+    </div>
+  </div>
+</div> -->
 <router-outlet></router-outlet>

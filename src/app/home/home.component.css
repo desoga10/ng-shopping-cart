@@ -34,3 +34,17 @@ img {
 .product-info .connect button {
   margin-right: 15px;
 }
+
+
+
+/* Zoom Image */
+.zoom {
+  background-color: none;
+  transition: transform .2s; /* Animation */
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}
