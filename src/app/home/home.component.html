@@ -2,14 +2,15 @@
   <div class="container-fluid">
     <a class="navbar-brand">Navbar</a>
     <form class="d-flex">
-      <button [disabled]="!products" class="btn btn-outline-success" (click)="checkout()">Checkout</button>
+      <button (click)="checkout()" class="btn btn-outline-success">Checkout</button>
     </form>
   </div>
 </nav>
 
 <div class="container pb-5 mt-n2 mt-md-n3">
   <div class="row">
-    <div class="col-xl-8 col-md-8">
+    <div class="col-xl-8 col-m
+    d-8">
       <!-- Item-->
       <div *ngFor="let product of productList" class="d-sm-flex justify-content-between my-4 pb-4 border-bottom mt-4">
         <div class="media d-block d-sm-flex text-center text-sm-left">
@@ -28,8 +29,6 @@
           <button (click)="addToCart(product)" type="button" class="btn btn-info mt-3">Add to Cart</button>
         </div>
       </div>
-
-
     </div>
 
 
@@ -42,23 +41,22 @@
       <h3 class="h6 pt-4 font-weight-semibold">
         Product Preview
       </h3>
-      <div class="product-info" *ngFor="let product of products; let i = index">
+      <div class="product-info" *ngFor="let product of products; let i  = index">
         <div class="col-md-3">
           <div class="">
             <img [src]="product?.image" alt="Product" alt="" class="img-circle">
           </div>
         </div>
-        <h5>{{product.name}} <span>${{product.price}}</span></h5>
+        <h5>{{product?.name}} <span>${{product?.price}}</span></h5>
         <span class="text-muted">Product Description</span>
         <p>
-          {{product.description}}
+          {{product?.description}}
         </p>
         <div>
-          <input min="1" type="number" value="{{ product.quantity }}" name="" class="form-control w-25"
-            [(ngModel)]="product.quantity" [ngModelOptions]="{standalone: true}"
-            (change)="changeSubtotal(product ,i)" />
+          <input [(ngModel)]="product.quantity" [ngModelOptions]="{standalone: true}" min="1" type="number" value="1"
+            name="" class="form-control w-25" />
           <br />
-          <span>${{subTotal | number : '1.2-2'}}</span>
+          <span>${{ product.quantity * product?.price | number : '1.2-2'}}</span>
         </div>
 
         <button (click)="removeFromCart(product)" type="button" class="btn btn-danger mt-3">Remove from cart</button>

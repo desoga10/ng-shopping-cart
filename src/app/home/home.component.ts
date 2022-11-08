@@ -10,35 +10,31 @@ import { ProductService } from '../service/product.service';
 export class HomeComponent implements OnInit {
   productList!: any[];
   products: any[] = [];
-  selectedProduct!: any;
   subTotal!: any;
   constructor(
     private product_service: ProductService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.product_service.getAllProducts().subscribe({
       next: (res: any) => {
-        //response
         console.log(res);
         this.productList = res;
       },
       error: (error) => {
-        // handle error
-        console.log(error);
+        alert(error);
       },
       complete: () => {
-        console.log('Request complete');
+        console.log('Request Completed');
       },
     });
 
     this.product_service.loadCart();
     this.products = this.product_service.getProduct();
-    console.log(this.products);
   }
 
-  // Add product to cart
+  //Add product to Cart
   addToCart(product: any) {
     if (!this.product_service.productInCart(product)) {
       product.quantity = 1;
@@ -48,15 +44,24 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  //Change sub total amount
+  // changeSubTotal(product: any, index: any) {
+  //   const qty = product.quantity;
+  //   const amt = product.price;
+
+  //   this.subTotal = amt * qty;
+
+  //   this.product_service.saveCart();
+  // }
+
   //Remove a Product from Cart
   removeFromCart(product: any) {
     this.product_service.removeProduct(product);
     this.products = this.product_service.getProduct();
-
-    console.log(this.products);
   }
 
-  // Calculate total
+  //Calculate Total
+
   get total() {
     return this.products?.reduce(
       (sum, product) => ({
@@ -65,15 +70,6 @@ export class HomeComponent implements OnInit {
       }),
       { quantity: 1, price: 0 }
     ).price;
-  }
-
-  //Change Sub Total Amount
-  changeSubtotal(product: any, index: any) {
-    const qty = product.quantity;
-    const amt = product.price;
-    this.subTotal = amt * qty;
-
-    this.product_service.saveCart();
   }
 
   checkout() {
